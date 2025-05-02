@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "wifi-ble-daemon"
+version = "0.1.0"
+description = "BLE Wi-Fi provisioning daemon for Raspberry Pi Zero"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+dbus-next = "^0.6"
+python-networkmanager = "^0.3"
+
+[tool.poetry.scripts]
+wifi-ble-daemon = "wifi_ble_daemon.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
