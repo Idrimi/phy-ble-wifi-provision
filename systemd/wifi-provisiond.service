@@ -1,0 +1,17 @@
+[Unit]
+Description=BLE Wi‑Fi Provisioning Daemon
+After=bluetooth.service NetworkManager.service
+Requires=bluetooth.service NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wifi-provisiond
+User=root
+Restart=on-failure
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW
+NoNewPrivileges=yes
+ProtectSystem=full
+ProtectHome=yes
+
+[Install]
+WantedBy=multi-user.target

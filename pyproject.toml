@@ -1,17 +1,26 @@
+[build-system]
+requires = ["poetry-core>=1.5.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
-name = "wifi-ble-daemon"
+name = "rpi-wifi-provision"
 version = "0.1.0"
-description = "BLE Wi-Fi provisioning daemon for Raspberry Pi Zero"
+description = "BLE Wi‑Fi provisioning daemon for Raspberry Pi Zero 2 W"
 authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "wifi_provision" }]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-dbus-next = "^0.6"
-python-networkmanager = "^0.3"
+python = "^3.11"
+dbus-next = "^0.2.3"
+python-networkmanager = "^2.3"
+anyio = "^4.0"
 
 [tool.poetry.scripts]
-wifi-ble-daemon = "wifi_ble_daemon.main:main"
+wifi-provisiond = "wifi_provision.daemon:main"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+mypy = "^1.10"
+ruff = "^0.4"
