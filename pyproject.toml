@@ -11,9 +11,9 @@ readme = "README.md"
 packages = [{ include = "wifi_provision" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12.3"
 dbus-next = "^0.2.3"
-python-networkmanager = "^2.3"
+python-networkmanager = "^2.2"
 anyio = "^4.0"
 
 [tool.poetry.scripts]
